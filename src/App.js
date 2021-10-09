@@ -372,7 +372,7 @@ function SelectStudents() {
   }
   function assignNewMentees() {
     fetch("https://ranjith-assign-mentor.herokuapp.com/assignStudents", {
-      method: "POST",
+      method: "PUT",
       body: JSON.stringify({ mentor: mentorData, newMentees: newMentees }),
       headers: {
         "Content-Type": "application/json",
@@ -465,7 +465,7 @@ function AddMentor() {
   }, []);
   function assignMentor(mentor) {
     fetch("https://ranjith-assign-mentor.herokuapp.com/assignMentor", {
-      method: "POST",
+      method: "PUT",
       body: JSON.stringify({
         student: { email: email, mobileNo: mobileNo, name: name, pic: pic },
         oldMentor: studentData.mentor, newMentor: mentor
